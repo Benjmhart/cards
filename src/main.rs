@@ -26,6 +26,7 @@ impl Deck {
         self.cards.shuffle(&mut rng);
     }
 
+    // needs error handling
     fn deal(&mut self, num_cards: usize) -> Vec<String> {
         self.cards.split_off(self.cards.len() - num_cards)
     }
