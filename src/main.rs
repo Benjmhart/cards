@@ -10,7 +10,7 @@ impl Deck {
         let suits = ["Hearts", "Spades", "Diamonds"];
         let values = ["Ace", "Two", "Three"];
         let mut cards = vec![];
-
+        // TODO: learn to do this immutably/functional style
         for suit in suits {
             for value in values {
                 let card = format!("{} of {}", value, suit);
@@ -22,11 +22,13 @@ impl Deck {
     }
 
     fn shuffle (&mut self) -> () {
+        // TODO: learn to do this immutably
         let mut rng = thread_rng();
         self.cards.shuffle(&mut rng);
     }
 
     // needs error handling
+    // TODO: learn to do this immutably
     fn deal(&mut self, num_cards: usize) -> Vec<String> {
         self.cards.split_off(self.cards.len() - num_cards)
     }
